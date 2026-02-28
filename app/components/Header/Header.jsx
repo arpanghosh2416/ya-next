@@ -1,5 +1,7 @@
+"use client";
 import { useRef } from "react";
-import { Container, Navbar, SidebarMaybe } from "../../components";
+import { Container } from "../shared";
+import { Navbar, MobileSidebar } from "./Navbar";
 
 const Header = () => {
   const sidebarRef = useRef(null);
@@ -7,7 +9,7 @@ const Header = () => {
   return (
     <header className="bg-black">
       <Container>
-        <SidebarMaybe ref={sidebarRef} />
+        <MobileSidebar ref={sidebarRef} />
         <Navbar toggleSidebar={() => sidebarRef.current?.toggle()} />
       </Container>
     </header>

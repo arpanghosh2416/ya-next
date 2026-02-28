@@ -1,7 +1,7 @@
 import { useState, useImperativeHandle, forwardRef } from "react";
-import { HashLink } from "react-router-hash-link";
+import Link from "next/link";
 import Image from "next/image";
-import { useClickOutside } from "../shared/hooks/useClickOutside";
+import { useClickOutside } from "../../shared";
 import DropdownItem from "../../shared/DropDown/DropDownItem";
 
 const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
@@ -15,10 +15,8 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
       label: "Home",
       subItems: [
         { link: "#services", label: "Our Services" },
-        { link: "#about", label: "About Us" },
         { link: "#work", label: "Our Works" },
         { link: "#course", label: "Upskill Courses" },
-        { link: "#contact", label: "Contact Us" },
       ],
     },
     {
@@ -82,7 +80,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
       aria-label="Mobile navigation menu"
     >
       <nav className="p-4">
-        <HashLink smooth to="#home" className="mb-4 block">
+        <Link href="#home" className="mb-4 block">
           <Image
             className="h-12 w-auto cursor-pointer"
             src="https://youngarchitects.in/assets/logo/brandlogo.webp"
@@ -90,7 +88,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
             width={48}
             height={48}
           />
-        </HashLink>
+        </Link>
         <ul className="flex flex-col gap-2">
           {navItems.map((item, index) => (
             <li key={item.link}>
@@ -111,28 +109,27 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
                     <ul className="ml-4 mt-1 flex flex-col">
                       {item.subItems.map((subItem) => (
                         <DropdownItem key={subItem.link}>
-                          <HashLink
+                          <Link
                             smooth
                             to={subItem.link}
                             onClick={() => setIsOpen(false)}
                             className="w-full text-sm"
                           >
                             {subItem.label}
-                          </HashLink>
+                          </Link>
                         </DropdownItem>
                       ))}
                     </ul>
                   )}
                 </div>
               ) : (
-                <HashLink
-                  smooth
-                  to={item.link}
+                <Link
+                  href={item.link}
                   onClick={() => setIsOpen(false)}
                   className="block rounded-lg px-4 py-2 text-base font-medium text-white transition-all duration-200 hover:bg-blue-500/20 hover:text-blue-400 focus:bg-blue-500/20 focus:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 >
                   {item.label}
-                </HashLink>
+                </Link>
               )}
             </li>
           ))}

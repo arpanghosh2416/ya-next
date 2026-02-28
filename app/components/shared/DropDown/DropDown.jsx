@@ -1,6 +1,8 @@
+"use client";
+
 import { useState } from "react";
 
-import { useClickOutside } from "../../../hooks/useClickOutside";
+import { useClickOutside } from "../hooks/useClickOutside";
 
 const Dropdown = (props) => {
   const { children, trigger } = props;

@@ -5,7 +5,7 @@ const Hero = (props) => {
     <Container>
       <article
         id="home"
-        className="m-auto flex w-[90%] flex-col justify-between gap-6 pb-16 pt-[8rem] sm:w-[100%] md:flex-row-reverse"
+        className="m-auto flex w-[90%] flex-col justify-between gap-6 pb-16 pt-32 sm:w-full md:flex-row-reverse"
       >
         {/* FlipCard Section - Right on desktop, First on mobile */}
         <section className="flex w-full justify-center md:w-[50%]">
