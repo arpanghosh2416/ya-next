@@ -4,7 +4,9 @@ import Hero from "../components/Header/Hero/Hero";
 const HomePage = () => {
   return (
     <Layout>
-      <Hero />
+      <div className="bg-black">
+        <Hero />
+      </div>
     </Layout>
   );
 };

@@ -1,21 +1,26 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,html}"],
   theme: {
+    screens: {
+      xs: "320px",
+      sm: "576px",
+      md: "768px",
+      lg: "992px",
+      xl: "1200px",
+      "2xl": "1400px",
+    },
     extend: {
-      colors: {
-        brand: {
-          purple: "rgb(175, 67, 153)",
-          blue: "rgb(55, 131, 197)",
-          lightblue: "rgb(86, 159, 214)",
-          slogan: "rgb(178, 203, 177)",
-          white: "rgb(255, 255, 255)",
-          black: "rgb(0, 0, 0)",
-          oldBlue: "rgb(0, 198, 253)",
-        },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
-      borderRadius: {
-        xl: "1rem",
+      colors: {
+        primary: "#BE3887",
+        "primary-blue": "#3983C5",
+        "secondary-dark": "#3983C5",
+        "secondary-light": "#559FD6",
+        "primary-blue-ed": "#15ade5",
       },
     },
   },

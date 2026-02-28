@@ -1,11 +1,11 @@
 import { Container, FlipCard, Button } from "../../shared";
 
-const Hero = (props) => {
+const Hero = () => {
   return (
     <Container>
       <article
         id="home"
-        className="m-auto flex w-[90%] flex-col justify-between gap-6 pb-16 pt-32 sm:w-full md:flex-row-reverse"
+        className="m-auto flex w-[90%] flex-col justify-between gap-6 pb-16 pt-32 sm:w-full md:flex-row-reverse "
       >
         {/* FlipCard Section - Right on desktop, First on mobile */}
         <section className="flex w-full justify-center md:w-[50%]">
@@ -31,12 +31,12 @@ const Hero = (props) => {
               and achieve sustainable growth.
             </span>
           </h2>
-          <div className="flex flex-row items-center gap-4">
+          <div className="flex flex-row gap-4 items-center">
             <a
               href="https://calendly.com/yafoundations/45min"
               className="flex-1"
             >
-              <Button className="w-full">Book Consultation</Button>
+              <Button>Book Consultation</Button>
             </a>
             <a
               href="https://youngarchitects.in/assets/YA_Policy.pdf"
@@ -44,7 +44,7 @@ const Hero = (props) => {
               rel="noopener noreferrer"
               className="flex-1"
             >
-              <Button className="w-full">View Policy</Button>
+              <Button>View Policy</Button>
             </a>
           </div>
         </section>

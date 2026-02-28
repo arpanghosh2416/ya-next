@@ -8,7 +8,7 @@ const Footer = (props) => {
         <article className="py-8 sm:py-16">
           <a href="#hero">
             <Image
-              className="h-12 cursor-pointer"
+              className="h-8 w-auto cursor-pointer sm:h-12"
               alt="YA-logo"
               src="https://youngarchitects.in/assets/logo/brandlogo.webp"
               width={48}

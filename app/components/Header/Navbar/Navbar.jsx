@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Dropdown from "../../shared/DropDown/DropDown";
 import DropdownItem from "../../shared/DropDown/DropDownItem";
+import { Button } from "../../shared";
 
 const Navbar = ({ toggleSidebar }) => {
   const [isOpen, setIsOpen] = useState(0);
@@ -20,10 +21,8 @@ const Navbar = ({ toggleSidebar }) => {
       label: "Home",
       subItems: [
         { link: "#services", label: "Our Services" },
-        { link: "#about", label: "About Us" },
         { link: "#work", label: "Our Works" },
         { link: "#course", label: "Upskill Courses" },
-        { link: "#contact", label: "Contact Us" },
       ],
     },
     {
@@ -66,22 +65,21 @@ const Navbar = ({ toggleSidebar }) => {
         { link: "#white", label: "White Papers" },
       ],
     },
-    { link: "#contact", label: "Contact Us" },
   ];
 
   return (
-    <nav className="fixed left-0 top-0 z-1000 flex w-full items-center justify-between bg-black px-6 shadow-md md:px-12">
+    <nav className="fixed left-0 top-0 z-1000 flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-5">
       <Link href="#home">
         <Image
-          className="my-2 h-12 cursor-pointer"
+          className="h-8 w-auto cursor-pointer sm:h-12"
+          alt="YA-logo"
           src="https://youngarchitects.in/assets/logo/brandlogo.webp"
-          alt="Young-Architects"
           width={48}
           height={48}
         />
       </Link>
-      <section>
-        <ul className="hidden gap-x-8 text-lg text-white md:flex">
+      <div className="mx-auto hidden md:flex">
+        <ul className="flex gap-x-8 text-lg text-white">
           {navItems.map((item) => (
             <li key={item.link}>
               {item.subItems ? (
@@ -115,12 +113,17 @@ const Navbar = ({ toggleSidebar }) => {
             </li>
           ))}
         </ul>
-        <button onClick={handleOnClick} className="block md:hidden">
-          <i
-            className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"} text-4xl text-white`}
-          ></i>
-        </button>
-      </section>
+      </div>
+      <div className="hidden md:block">
+        <Link href="#contact">
+          <Button>Contact Us</Button>
+        </Link>
+      </div>
+      <button onClick={handleOnClick} className="ml-auto block md:hidden">
+        <i
+          className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"} text-4xl text-white`}
+        ></i>
+      </button>
     </nav>
   );
 };
