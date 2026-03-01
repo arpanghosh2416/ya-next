@@ -34,6 +34,8 @@ const Hero = () => {
           <div className="flex flex-row gap-4 items-center">
             <a
               href="https://calendly.com/yafoundations/45min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1"
             >
               <Button>Book Consultation</Button>

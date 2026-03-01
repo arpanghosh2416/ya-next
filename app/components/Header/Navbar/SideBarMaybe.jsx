@@ -1,8 +1,9 @@
+"use client";
+
 import { useState, useImperativeHandle, forwardRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useClickOutside, Button } from "../../shared";
-import DropdownItem from "../../shared/DropDown/DropDownItem";
+import { useClickOutside, Button, DropdownItem } from "../../shared";
 
 const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
   const [isOpen, setIsOpen] = useState(false);

@@ -68,10 +68,10 @@ const Navbar = ({ toggleSidebar }) => {
   ];
 
   return (
-    <nav className="fixed left-0 top-0 z-1000 flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-5">
+    <nav className="fixed left-0 top-0 z-1000 flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-1">
       <Link href="#home">
         <Image
-          className="h-8 w-auto cursor-pointer sm:h-12"
+          className="h-auto w-auto cursor-pointer sm:h-12"
           alt="YA-logo"
           src="https://youngarchitects.in/assets/logo/brandlogo.webp"
           width={48}
