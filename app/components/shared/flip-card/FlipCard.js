@@ -9,7 +9,7 @@ const FlipCard = ({
   qrCode = "https://youngarchitects.in/assets/image/qr.webp",
   phoneNumbers = ["+91 9883952010", "+91 9804569051"],
   email = "yafoundations@gmail.com",
-  animationGif = "https://youngarchitects.in/assets/image/clickhere.webp", // Add your GIF import here
+  animationGif = "https://youngarchitects.in/assets/gif/click_here2.gif", // Changed to .gif for animation
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -115,9 +115,10 @@ const FlipCard = ({
             <Image
               src={animationGif}
               alt="Click animation"
-              className="contrast-less: h-20 w-32 object-contain brightness-200"
-              width={132}
+              className="h-20 w-32 object-contain brightness-200"
+              width={128}
               height={80}
+              unoptimized
             />
           </div>
         )}

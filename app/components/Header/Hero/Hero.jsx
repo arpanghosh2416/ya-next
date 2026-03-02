@@ -15,15 +15,14 @@ const Hero = () => {
         {/* Text Content Section - Left on desktop, Second on mobile */}
         <section className="flex w-full flex-col justify-center gap-y-1 text-white md:w-[40%]">
           <h1 className="font-poppins text-[25px] font-bold leading-8 md:text-[25px] md:leading-10">
-            <span className="capitalize text-primary">YOUNG ARCHITECTS</span>
-            <span> - </span> <br />
             <span className="text-primary-blue">
-              {" "}
               Best AI-Driven IT Solutions & Digital Transformation in Kolkata
             </span>
+            <span className="text-[#929791]"> - </span> <br />
+            <span className="text-[#BE3887]"> YOUNG ARCHITECTS</span>
           </h1>
           <h2 className="mt-4 font-poppins text-[18px] opacity-90 md:mt-8 md:text-[15px]">
-            <span>
+            <span className="font-semibold">
               A dynamic IT solutions with AI-driven digital consultancy
               transforming the technology landscape, delivering cutting-edge
               software development, digital transformation, automation, SEO, and
