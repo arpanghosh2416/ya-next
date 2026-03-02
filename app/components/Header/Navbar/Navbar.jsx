@@ -69,13 +69,20 @@ const Navbar = ({ toggleSidebar }) => {
 
   return (
     <nav className="fixed left-0 top-0 z-1000 flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-1">
-      <Link href="#home">
+      <Link
+        href="#home"
+        aria-label="Go to Home"
+        className="inline-flex items-center"
+      >
         <Image
-          className="h-auto w-auto cursor-pointer sm:h-12"
-          alt="YA-logo"
           src="https://youngarchitects.in/assets/logo/brandlogo.webp"
-          width={48}
-          height={48}
+          alt="Young Architects logo"
+          width={160} // intrinsic width (helps Next optimize)
+          height={48} // intrinsic height
+          priority
+          quality={100}
+          sizes="(max-width: 640px) 120px, 160px"
+          className="h-10 w-auto sm:h-12 select-none"
         />
       </Link>
       <div className="mx-auto hidden md:flex">
@@ -87,7 +94,7 @@ const Navbar = ({ toggleSidebar }) => {
                   trigger={
                     <Link
                       href={item.link}
-                      className="flex items-center gap-1 px-3 py-1 text-lg font-medium text-white transition-all duration-200 ease-in-out hover:scale-105 hover:text-blue-400"
+                      className="flex items-center gap-1 px-3 py-1 text-lg font-medium text-white transition-all duration-200 ease-in-out hover:scale-105 hover:text-[#BE3887]"
                     >
                       {item.label}
                       <i className="fa-solid fa-chevron-down text-xs"></i>

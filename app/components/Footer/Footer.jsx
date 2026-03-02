@@ -1,20 +1,28 @@
 import Image from "next/image";
 import { Container } from "../shared";
+import Link from "next/link";
 
 const Footer = (props) => {
   return (
     <footer className="bg-black">
       <Container>
         <article className="py-8 sm:py-16">
-          <a href="#hero">
+          <Link
+            href="#home"
+            aria-label="Go to Home"
+            className="inline-flex items-center"
+          >
             <Image
-              className="h-8 w-auto cursor-pointer sm:h-12"
-              alt="YA-logo"
               src="https://youngarchitects.in/assets/logo/brandlogo.webp"
-              width={48}
-              height={48}
+              alt="Young Architects logo"
+              width={160} // intrinsic width (helps Next optimize)
+              height={48} // intrinsic height
+              priority
+              quality={100}
+              sizes="(max-width: 640px) 120px, 160px"
+              className="h-10 w-auto sm:h-12 select-none"
             />
-          </a>
+          </Link>
           <div className="my-10 h-px w-full bg-secondary-light bg-opacity-50"></div>
           <section className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div className="text-gray-400">
