@@ -17,7 +17,8 @@
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.2.1",
+    "autoprefixer": "^10.4.27",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4"
