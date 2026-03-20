@@ -1,17 +1,19 @@
 "use client";
-import { useRef } from "react";
-import { Container } from "../shared";
+import { useRef, useState } from "react";
 import { Navbar, MobileSidebar } from "./Navbar";
 
 const Header = () => {
   const sidebarRef = useRef(null);
+  const hamburgerRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen((prev) => !prev);
+  const close = () => setIsOpen(false);
 
   return (
     <header className="bg-black">
-      <Container>
-        <MobileSidebar ref={sidebarRef} />
-        <Navbar toggleSidebar={() => sidebarRef.current?.toggle()} />
-      </Container>
+      <MobileSidebar ref={sidebarRef} isOpen={isOpen} onClose={close} excludeRef={hamburgerRef} />
+      <Navbar isOpen={isOpen} toggleSidebar={toggle} hamburgerRef={hamburgerRef} />
     </header>
   );
 };

@@ -5,10 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useClickOutside, Button, DropdownItem } from "../../shared";
 
-const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
-  const [isOpen, setIsOpen] = useState(false);
+const MobileSidebar = forwardRef(function MobileSidebar({ isOpen, onClose, excludeRef }, ref) {
   const [openDropdown, setOpenDropdown] = useState(null);
-  const sidebarRef = useClickOutside(() => setIsOpen(false));
+  const sidebarRef = useClickOutside(onClose, excludeRef);
 
   const navItems = [
     {
@@ -65,16 +64,12 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
 
   const contactItem = { link: "#contact", label: "Contact Us" };
 
-  useImperativeHandle(ref, () => ({
-    toggle: () => setIsOpen((prev) => !prev),
-    close: () => setIsOpen(false),
-    open: () => setIsOpen(true),
-  }));
+  useImperativeHandle(ref, () => ({}));
 
   return (
     <aside
       ref={sidebarRef}
-      className={`fixed right-4 top-24 z-[9999] w-64 rounded-xl bg-gray-900/95 p-2 shadow-2xl backdrop-blur-md transition-all duration-300 ease-out md:hidden ${
+      className={`fixed right-4 top-24 z-9999 w-64 rounded-xl bg-gray-900/95 p-2 shadow-2xl backdrop-blur-md transition-all duration-300 ease-out md:hidden ${
         isOpen
           ? "pointer-events-auto z-50 translate-y-0 scale-100 opacity-100"
           : "pointer-events-none -z-10 -translate-y-5 scale-95 opacity-0"
@@ -93,13 +88,6 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
               height={48}
             />
           </Link>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="text-white hover:text-blue-400"
-            aria-label="Close menu"
-          >
-            <i className="fa-solid fa-xmark text-2xl"></i>
-          </button>
         </div>
         <ul className="flex flex-col gap-3">
           {navItems.map((item, index) => (
@@ -123,7 +111,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
                         <DropdownItem key={subItem.link}>
                           <Link
                             href={subItem.link}
-                            onClick={() => setIsOpen(false)}
+                            onClick={onClose}
                             className="w-full text-sm"
                           >
                             {subItem.label}
@@ -138,7 +126,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(props, ref) {
           ))}
         </ul>
         <div className="mt-4 flex justify-center">
-          <Link href={contactItem.link} onClick={() => setIsOpen(false)}>
+          <Link href={contactItem.link} onClick={onClose}>
             <Button className="w-full">{contactItem.label}</Button>
           </Link>
         </div>

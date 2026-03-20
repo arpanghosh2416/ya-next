@@ -1,19 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { forwardRef, useImperativeHandle } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Dropdown from "../../shared/DropDown/DropDown";
 import DropdownItem from "../../shared/DropDown/DropDownItem";
 import { Button } from "../../shared";
 
-const Navbar = ({ toggleSidebar }) => {
-  const [isOpen, setIsOpen] = useState(0);
+const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef }, ref) {
+  useImperativeHandle(ref, () => ({}));
 
-  const handleOnClick = () => {
-    toggleSidebar();
-    setIsOpen(!isOpen);
-  };
+  const handleOnClick = () => toggleSidebar();
 
   const navItems = [
     {
@@ -68,7 +65,7 @@ const Navbar = ({ toggleSidebar }) => {
   ];
 
   return (
-    <nav className="fixed left-0 top-0 z-1000 flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-1">
+    <nav className="fixed left-0 top-0 z-[1000] flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-1">
       <Link
         href="#home"
         aria-label="Go to Home"
@@ -85,7 +82,7 @@ const Navbar = ({ toggleSidebar }) => {
           className="h-10 w-auto sm:h-12 select-none"
         />
       </Link>
-      <div className="mx-auto hidden md:flex">
+      <div className="flex-1 hidden md:flex justify-center">
         <ul className="flex gap-x-8 text-lg text-white">
           {navItems.map((item) => (
             <li key={item.link}>
@@ -126,13 +123,13 @@ const Navbar = ({ toggleSidebar }) => {
           <Button>Contact Us</Button>
         </Link>
       </div>
-      <button onClick={handleOnClick} className="ml-auto block md:hidden">
+      <button ref={hamburgerRef} onClick={handleOnClick} className="ml-auto block md:hidden">
         <i
           className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"} text-4xl text-white`}
         ></i>
       </button>
     </nav>
   );
-};
+});
 
 export default Navbar;
