@@ -20,6 +20,8 @@ const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef 
         { link: "#services", label: "Our Services" },
         { link: "#work", label: "Our Works" },
         { link: "#course", label: "Upskill Courses" },
+        { link: "#wcu", label: "Why Choose Us" },
+
       ],
     },
     {

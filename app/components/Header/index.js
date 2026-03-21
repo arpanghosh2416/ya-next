@@ -1,3 +1,3 @@
-export { default as Navbar } from "./Navbar";
-export { default as MobileSidebar } from "./Navbar";
+export { default } from "./Header";
+export { Navbar, MobileSidebar } from "./Navbar";
 export { default as Hero } from "./Hero";

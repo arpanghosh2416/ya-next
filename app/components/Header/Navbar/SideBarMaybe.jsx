@@ -5,7 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useClickOutside, Button, DropdownItem } from "../../shared";
 
-const MobileSidebar = forwardRef(function MobileSidebar({ isOpen, onClose, excludeRef }, ref) {
+const MobileSidebar = forwardRef(function MobileSidebar(
+  { isOpen, onClose, excludeRef },
+  ref,
+) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const sidebarRef = useClickOutside(onClose, excludeRef);
 
@@ -17,6 +20,7 @@ const MobileSidebar = forwardRef(function MobileSidebar({ isOpen, onClose, exclu
         { link: "#services", label: "Our Services" },
         { link: "#work", label: "Our Works" },
         { link: "#course", label: "Upskill Courses" },
+        { link: "#wcu", label: "Why Choose Us" },
       ],
     },
     {
