@@ -14,17 +14,19 @@ const MobileSidebar = forwardRef(function MobileSidebar(
 
   const navItems = [
     {
-      link: "#home",
+      // link: "#home",
       label: "Home",
       subItems: [
+        { link: "#home", label: "Who Are We" },
         { link: "#services", label: "Our Services" },
+        { link: "#wcu", label: "Why Choose Us" },
         { link: "#work", label: "Our Works" },
         { link: "#course", label: "Upskill Courses" },
-        { link: "#wcu", label: "Why Choose Us" },
+        { link: "#enquiry", label: "Contact For Enquiry" },
       ],
     },
     {
-      link: "#packages",
+      // link: "#packages",
       label: "Packages",
       subItems: [
         { link: "#grb", label: "Google Reputation Builder" },
@@ -35,7 +37,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(
       ],
     },
     {
-      link: "#about",
+      // link: "#about",
       label: "About Us",
       subItems: [
         { link: "#team", label: "Our Team" },
@@ -44,7 +46,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(
       ],
     },
     {
-      link: "#industry",
+      // link: "#industry",
       label: "Industry",
       subItems: [
         { link: "#legal", label: "Legal" },
@@ -55,7 +57,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(
       ],
     },
     {
-      link: "#insights",
+      // link: "#insights",
       label: "Insights",
       subItems: [
         { link: "#blog", label: "Blog" },
@@ -95,7 +97,7 @@ const MobileSidebar = forwardRef(function MobileSidebar(
         </div>
         <ul className="flex flex-col gap-3">
           {navItems.map((item, index) => (
-            <li key={item.link}>
+            <li key={item.label}>
               {item.subItems ? (
                 <div>
                   <button

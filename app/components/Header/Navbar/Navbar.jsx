@@ -7,25 +7,29 @@ import Dropdown from "../../shared/DropDown/DropDown";
 import DropdownItem from "../../shared/DropDown/DropDownItem";
 import { Button } from "../../shared";
 
-const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef }, ref) {
+const Navbar = forwardRef(function Navbar(
+  { toggleSidebar, isOpen, hamburgerRef },
+  ref,
+) {
   useImperativeHandle(ref, () => ({}));
 
   const handleOnClick = () => toggleSidebar();
 
   const navItems = [
     {
-      link: "#home",
+      // link: "#home",
       label: "Home",
       subItems: [
+        { link: "#home", label: "Who Are We" },
         { link: "#services", label: "Our Services" },
+        { link: "#wcu", label: "Why Choose Us" },
         { link: "#work", label: "Our Works" },
         { link: "#course", label: "Upskill Courses" },
-        { link: "#wcu", label: "Why Choose Us" },
-
+        { link: "#enquiry", label: "Contact For Enquiry" },
       ],
     },
     {
-      link: "#packages",
+      // link: "#packages",
       label: "Packages",
       subItems: [
         { link: "#grb", label: "Google Reputation Builder" },
@@ -36,7 +40,7 @@ const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef 
       ],
     },
     {
-      link: "#about",
+      // link: "#about",
       label: "About Us",
       subItems: [
         { link: "#team", label: "Our Team" },
@@ -45,7 +49,7 @@ const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef 
       ],
     },
     {
-      link: "#industry",
+      // link: "#industry",
       label: "Industry",
       subItems: [
         { link: "#legal", label: "Legal" },
@@ -56,7 +60,7 @@ const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef 
       ],
     },
     {
-      link: "#insights",
+      // link: "#insights",
       label: "Insights",
       subItems: [
         { link: "#blog", label: "Blog" },
@@ -67,7 +71,7 @@ const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef 
   ];
 
   return (
-    <nav className="fixed left-0 top-0 z-[1000] flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-1">
+    <nav className="fixed left-0 top-0 z-1000 flex w-full items-center bg-black px-4 py-3 shadow-md sm:px-6 sm:py-4 md:px-12 md:py-1">
       <Link
         href="#home"
         aria-label="Go to Home"
@@ -87,17 +91,14 @@ const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef 
       <div className="flex-1 hidden md:flex justify-center">
         <ul className="flex gap-x-8 text-lg text-white">
           {navItems.map((item) => (
-            <li key={item.link}>
+            <li key={item.label}>
               {item.subItems ? (
                 <Dropdown
                   trigger={
-                    <Link
-                      href={item.link}
-                      className="flex items-center gap-1 px-3 py-1 text-lg font-medium text-white transition-all duration-200 ease-in-out hover:scale-105 hover:text-[#BE3887]"
-                    >
+                    <button className="flex items-center gap-1 px-3 py-1 text-lg font-medium text-white transition-all duration-200 ease-in-out hover:scale-105 hover:text-[#BE3887]">
                       {item.label}
                       <i className="fa-solid fa-chevron-down text-xs"></i>
-                    </Link>
+                    </button>
                   }
                 >
                   {item.subItems.map((subItem) => (
@@ -120,12 +121,16 @@ const Navbar = forwardRef(function Navbar({ toggleSidebar, isOpen, hamburgerRef 
           ))}
         </ul>
       </div>
-      <div className="hidden md:block">
+      <div className="hidden mb-2 py-auto md:block">
         <Link href="#contact">
           <Button>Contact Us</Button>
         </Link>
       </div>
-      <button ref={hamburgerRef} onClick={handleOnClick} className="ml-auto block md:hidden">
+      <button
+        ref={hamburgerRef}
+        onClick={handleOnClick}
+        className="ml-auto block md:hidden"
+      >
         <i
           className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"} text-4xl text-white`}
         ></i>

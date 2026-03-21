@@ -9,4 +9,4 @@ export { default as DropdownItem } from "./DropDown/DropDownItem";
 export { useClickOutside } from "./hooks/useClickOutside";
 export { default as FlipCard } from "./flip-card/FlipCard";
 
-export { default as Modal } from "./modal/Modal";
+export { default as Modal } from "./Modal/Modal";
