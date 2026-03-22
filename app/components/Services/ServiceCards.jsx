@@ -82,16 +82,16 @@ const ServiceCards = () => {
               />
             </div>
             <div className="space-y-2 font-[Roboto]">
-              <h2 className="text-secondary text-center text-lg font-bold capitalize ">
+              <h2 className="text-black text-center text-lg font-extrabold capitalize ">
                 {service.title}
               </h2>
-              <p className="text-center text-sm text-slate-600 ">
+              <p className="text-center text-sm text-slate-950 font-medium">
                 {service.description}
               </p>
             </div>
             <button
               onClick={() => toggleModalRoot(service)}
-              className="text-center font-bold text-primary "
+              className="text-center font-extrabold text-primary font-[Roboto]"
             >
               Learn More
             </button>

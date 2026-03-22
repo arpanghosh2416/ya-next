@@ -95,7 +95,7 @@ const Navbar = forwardRef(function Navbar(
               {item.subItems ? (
                 <Dropdown
                   trigger={
-                    <button className="flex items-center gap-1 px-3 py-1 text-lg font-medium text-white transition-all duration-200 ease-in-out hover:scale-105 hover:text-[#BE3887]">
+                    <button className="flex items-center gap-1 px-3 py-1 text-lg font-medium text-white transition-all duration-200 ease-in-out hover:scale-105 hover:text-primary">
                       {item.label}
                       <i className="fa-solid fa-chevron-down text-xs"></i>
                     </button>
